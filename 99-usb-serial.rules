@@ -1,7 +1,0 @@
-# -----------------------------------------------------------------------
-# Fix USB serial port
-# -----------------------------------------------------------------------
-
-# /dev/ttyS1 serial TTL
-#ATTRS{devpath}=="1.2", SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", SYMLINK+="ttyUSB0", GROUP="dialout", MODE="0666"
-SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="AU04YB06", SYMLINK+="sameName", MODE:="0666"
