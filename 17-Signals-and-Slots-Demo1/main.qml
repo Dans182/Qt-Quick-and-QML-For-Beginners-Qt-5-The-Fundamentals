@@ -15,19 +15,20 @@ Window {
         height: 300
         color: "red"
 
+        //señal
         signal greet(string message) //así declaro mi señal y le paso parámetros. Debo especificar el tipo de dato de los parámetros
 
         //cuando defines una señal o una PROPIEDAD (color, width, etc), automáticamente se genera un handler para ti
-
+        //señal
         onGreet: {
             console.log("onGreet: greet signal emited")
         }
-
+        //señal
         onWidthChanged: {
             console.log("Ha cambiado el width del rectangulo")
         }
 
-
+        //slot
         function myGreeting(mMessage){
             console.log("myGreeting slot called. The parameter is: " + mMessage) //Ahora acá definimos un slot, que es lo que queremos que se conecte a
                             //la señal. Un slot es una función, normal y corriente. Puede ser una función de JS.
