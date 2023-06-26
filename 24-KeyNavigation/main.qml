@@ -59,12 +59,12 @@ Window {
     }*/
 
     Grid {
-        width: 100; height: 100
+        anchors.centerIn: parent
         columns: 2
 
         Rectangle {
             id: topLeft
-            width: 50; height: 50
+            width: 100; height: 100
             color: focus ? "red" : "lightgray"
             focus: true
 
@@ -74,7 +74,7 @@ Window {
 
         Rectangle {
             id: topRight
-            width: 50; height: 50
+            width: 100; height: 100
             color: focus ? "red" : "lightgray"
 
             KeyNavigation.left: topLeft
@@ -83,7 +83,7 @@ Window {
 
         Rectangle {
             id: bottomLeft
-            width: 50; height: 50
+            width: 100; height: 100
             color: focus ? "red" : "lightgray"
 
             KeyNavigation.right: bottomRight
@@ -92,7 +92,7 @@ Window {
 
         Rectangle {
             id: bottomRight
-            width: 50; height: 50
+            width: 100; height: 100
             color: focus ? "red" : "lightgray"
 
             KeyNavigation.left: bottomLeft
