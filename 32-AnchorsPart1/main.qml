@@ -46,39 +46,61 @@ Window {
             width: 100
             height: width
             color: "black"
-            anchors.top: topCenterRectId.bottom
             anchors.left: centerLeftRectId.right
+            anchors.top: topCenterRectId.bottom
+
+            anchors.topMargin: 10
+            //para que funcionen los margenes de los anchors, se tiene que haber definido antes un anchor
+            //y el margin va a afectar a todos los elementos que estén anclados a el
+            //En este caso, el topMargin funciona, porque fue definido en el anchors.top
+            //sin embargo, el anchors.rightMargin no funcionará porque no fue definido en ningún lado como propiedad
+            anchors.rightMargin: 10 //este no funcionará
+
+            //otra forma es con los offsets. Estos permiten que la posición de tus objetos puedan ser manipulados usando
+            //las líneas centrales horizontales y verticales
+            //habría que comentar los anchors.left y anchors.top
+            //anchors.horizontalCenter: parent.horizontalCenter
+            //anchors.verticalCenter: parent.verticalCenter
+            //anchors.horizontalCenterOffset: 10
         }
         Rectangle {
             id: centerRightRectId
             width: 100
             height: width
             color: "green"
-            anchors.top: topRightRectId.bottom
             anchors.left: centerMiddleRectId.right
+            anchors.top: topRightRectId.bottom
         }
         Rectangle {
             id: bottomLeftRectId
             width: 100
             height: width
             color: "blue"
-            anchors.top: centerLeftRectId.bottom
+            anchors.right: centerMiddleRectId.left
+            anchors.top: centerMiddleRectId.bottom
         }
         Rectangle {
             id: bottomCenterRectId
             width: 100
             height: width
             color: "purple"
-            anchors.top: centerMiddleRectId.bottom
             anchors.left: bottomLeftRectId.right
+            anchors.top: centerMiddleRectId.bottom
         }
         Rectangle {
             id: bottomRightRectId
             width: 100
             height: width
             color: "yellow"
-            anchors.top: centerRightRectId.bottom
+            anchors.top: centerMiddleRectId.bottom
             anchors.left: bottomCenterRectId.right
         }
+    }
+    Rectangle {
+        id: siblingRectId
+        width: 200
+        height: 200
+        color: "black"
+        anchors.right: containerRectId.left
     }
 }
